@@ -52,26 +52,37 @@
 .picture1 {
     background-image: url('img/bmv_m5.jpg');
     background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+
 }
 
 .picture2 {
     background-image: url('img/mercedes_benz_g.jpg');
     background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
 
 .picture3 {
     background-image: url('img/mercedes_benz_s_class.jpg');
     background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
 
 .picture4 {
     background-image: url('img/mercedes_benz_sls_amg.jpg');
     background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
 
 .picture5 {
     background-image: url('img/shevrolekamaro.jpg');
     background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
 
 #picture1:checked ~ .texts > .text1,
@@ -177,9 +188,48 @@
 	content: " ";
 	display: block;
 	height: 12px;
-	/* left: -4px;
-	top: -4px; */
 	width: 12px;
 	border-radius: 50%;
 }
 
+@media (max-width: 1000px) {
+	.sliders {
+		width: 640px;
+		height: 360px;
+		margin: 20px auto 0;
+	}
+
+	.pictures {
+		transform: translateX(-640px);
+	}
+
+@keyframes slid {
+	from {
+		left: 640px;
+	}
+	to {
+		left: 0px;
+	}
+}
+
+@keyframes slid2 {
+	from {
+		left: 1280px;
+	}
+	to {
+		left: 0px;
+	}
+}
+
+.sliders .controls {
+    right: 28%;
+}
+
+.texts {
+	width: 400px;
+	bottom: -130px;
+	font-size: 36px;
+	left: 22%;
+	text-align: center;
+}
+}
