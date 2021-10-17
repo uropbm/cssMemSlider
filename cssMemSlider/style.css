@@ -24,7 +24,7 @@
     height: 45px;
 	overflow: hidden;
 	position: absolute;
-	width: 700px;
+	width: 400px;
 	bottom: -75px;
 	font-size: 36px;
 }
@@ -35,8 +35,8 @@
 	position: absolute;
 	width: inherit;
 	z-index: 0;
-	transform: scale(1.5);
-	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	transform: translateX(500px);
+	transition: transform 1s, opacity linear 1s;
 }
 
 .pictures {
@@ -45,8 +45,8 @@
 	position: absolute;
 	width: inherit;
 	z-index: 0;
-	transform: scale(1.5);
-	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	transform: translateX(-1440px);
+	transition: transform 1s, opacity linear 1s;
 }
 
 .picture1 {
@@ -79,9 +79,32 @@
 #picture3:checked ~ .texts > .text3,
 #picture4:checked ~ .texts > .text4,
 #picture5:checked ~ .texts > .text5 {
+	animation-duration: 1s;
+	animation-name: slid-text;
 	opacity: 1;
 	z-index: 1;
-	transform: scale(1);
+	animation-duration: 1s;
+	animation-name: slid-text2;
+	transform: translateX(0px);
+
+}
+
+@keyframes slid-text {
+	from {
+		left: -1000px;
+	}
+	to {
+		left: 0px;
+	}
+}
+
+@keyframes slid-text2 {
+	from {
+		left: -1000px;
+	}
+	to {
+		left: 0px;
+	}
 }
 
 #picture1:checked ~ .slider > .picture1,
@@ -89,11 +112,32 @@
 #picture3:checked ~ .slider > .picture3,
 #picture4:checked ~ .slider > .picture4,
 #picture5:checked ~ .slider > .picture5 {
+	animation-duration: 1s;
+	animation-name: slid;
 	opacity: 1;
 	z-index: 1;
-	transform: scale(1);
+	animation-duration: 1s;
+	animation-name: slid2;
+	transform: translateX(0px);
 }
 
+@keyframes slid {
+	from {
+		left: 1440px;
+	}
+	to {
+		left: 0px;
+	}
+}
+
+@keyframes slid2 {
+	from {
+		left: 2880px;
+	}
+	to {
+		left: 0px;
+	}
+}
 
 .sliders > input {
     display: none;
@@ -102,14 +146,14 @@
 .sliders .controls {
     right: 0;
     position: absolute;
-	bottom: -65px;
+	bottom: -75px;
 }
 
 .sliders label {
     cursor: pointer;
 	display: inline-block;
 	height: 15px;
-	margin: 25px 12px 0 16px;
+	margin: 16px;
 	position: relative;
 	width: 15px;
     border-radius: 50%;
@@ -133,8 +177,8 @@
 	content: " ";
 	display: block;
 	height: 12px;
-	left: -4px;
-	top: -4px;
+	/* left: -4px;
+	top: -4px; */
 	width: 12px;
 	border-radius: 50%;
 }
