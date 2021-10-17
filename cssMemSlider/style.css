@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	background-color: rgb(192, 189, 189);
+}
+
+.sliders {
+    width: 1440px;
+    height: 810px;
+	margin: 40px auto 0;
+	position: relative;
+}
+
+.slider {
+    height: inherit;
+	overflow: hidden;
+	position: relative;
+	width: inherit;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.texts {
+    height: 45px;
+	overflow: hidden;
+	position: absolute;
+	width: 400px;
+	bottom: -75px;
+	font-size: 36px;
+}
+
+.text {
+    height: inherit;
+	opacity: 0;
+	position: absolute;
+	width: inherit;
+	z-index: 0;
+	transform: translateX(500px);
+	transition: transform 1s, opacity linear 1s;
+}
+
+.pictures {
+    height: inherit;
+	opacity: 0;
+	position: absolute;
+	width: inherit;
+	z-index: 0;
+	transform: translateX(-1440px);
+	transition: transform 1s, opacity linear 1s;
+}
+
+.picture1 {
+    background-image: url('img/bmv_m5.jpg');
+    background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+
+}
+
+.picture2 {
+    background-image: url('img/mercedes_benz_g.jpg');
+    background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.picture3 {
+    background-image: url('img/mercedes_benz_s_class.jpg');
+    background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.picture4 {
+    background-image: url('img/mercedes_benz_sls_amg.jpg');
+    background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.picture5 {
+    background-image: url('img/shevrolekamaro.jpg');
+    background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+#picture1:checked ~ .texts > .text1,
+#picture2:checked ~ .texts > .text2,
+#picture3:checked ~ .texts > .text3,
+#picture4:checked ~ .texts > .text4,
+#picture5:checked ~ .texts > .text5 {
+	animation-duration: 1s;
+	animation-name: slid-text;
+	opacity: 1;
+	z-index: 1;
+	animation-duration: 1s;
+	animation-name: slid-text2;
+	transform: translateX(0px);
+
+}
+
+@keyframes slid-text {
+	from {
+		left: -1000px;
+	}
+	to {
+		left: 0px;
+	}
+}
+
+@keyframes slid-text2 {
+	from {
+		left: -1000px;
+	}
+	to {
+		left: 0px;
+	}
+}
+
+#picture1:checked ~ .slider > .picture1,
+#picture2:checked ~ .slider > .picture2,
+#picture3:checked ~ .slider > .picture3,
+#picture4:checked ~ .slider > .picture4,
+#picture5:checked ~ .slider > .picture5 {
+	animation-duration: 1s;
+	animation-name: slid;
+	opacity: 1;
+	z-index: 1;
+	animation-duration: 1s;
+	animation-name: slid2;
+	transform: translateX(0px);
+}
+
+@keyframes slid {
+	from {
+		left: 1440px;
+	}
+	to {
+		left: 0px;
+	}
+}
+
+@keyframes slid2 {
+	from {
+		left: 2880px;
+	}
+	to {
+		left: 0px;
+	}
+}
+
+.sliders > input {
+    display: none;
+}
+
+.sliders .controls {
+    right: 0;
+    position: absolute;
+	bottom: -75px;
+}
+
+.sliders label {
+    cursor: pointer;
+	display: inline-block;
+	height: 15px;
+	margin: 16px;
+	position: relative;
+	width: 15px;
+    border-radius: 50%;
+	transition: background ease-in-out .5s;
+}
+
+.sliders label:hover {
+	background: rgb(207, 132, 132);
+}
+
+#picture1:checked ~ .controls label:nth-of-type(1),
+#picture2:checked ~ .controls label:nth-of-type(2),
+#picture3:checked ~ .controls label:nth-of-type(3),
+#picture4:checked ~ .controls label:nth-of-type(4),
+#picture5:checked ~ .controls label:nth-of-type(5) {
+	background: rgb(71, 53, 53);
+}
+
+.sliders label::after {
+    border: 2px solid rgb(71, 53, 53);
+	content: " ";
+	display: block;
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+}
+
+@media (max-width: 1000px) {
+	.sliders {
+		width: 640px;
+		height: 360px;
+		margin: 20px auto 0;
+	}
+
+	.pictures {
+		transform: translateX(-640px);
+	}
+
+@keyframes slid {
+	from {
+		left: 640px;
+	}
+	to {
+		left: 0px;
+	}
+}
+
+@keyframes slid2 {
+	from {
+		left: 1280px;
+	}
+	to {
+		left: 0px;
+	}
+}
+
+.sliders .controls {
+    right: 28%;
+}
+
+.texts {
+	width: 400px;
+	bottom: -130px;
+	font-size: 36px;
+	left: 22%;
+	text-align: center;
+}
+}
